@@ -7,5 +7,24 @@
 My full name is Javad Pourmostafa /'dʒævɒd puːr'moʊs'tae'fɑː/! I go by joeybright or joyebright wherever I can get the username. I am currently a first-year PhD candidate at the Department of Cognitive Science and Artificial Intelligence (CSAI) of Tilburg University. I am also affiliated with the machine translation group (MT++) at the Tilburg University. My PhD thesis, entitled "An NMT Framework based on Language Understanding". It is divided into two main parts: (i) will investigate neural machine translation for low-resource language, e.g. Persian, through cross-lingual knowledge transfer, and (ii) aims to delve into multilingual and multi-domain adaptation. More information can be found on my personal webpage at https://ilk.uvt.nl/~pourmost/.
 <br>
 <br>
+name: gitartwork from a contribution graph
+on: 
+  push:
+  schedule:
+    - cron: '* */24 * * *'
+workflow_dispatch:
+jobs:
+  build:
+    name: Make gitartwork SVG
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: jasineri/gitartwork@v1
+        with:
+           # Use this username's contribution graph  
+           user_name: jasineri
+           # Text on contribution graph 
+           text: JASINERI
+      - uses: jasineri/simple-push-action@v1
 📫 Reach me at Javad.Pourmostafa [@] Gmail {.DOT.} com, or J.Pourmostafa [@] tilburguniversity {.DOT.} edu
 
